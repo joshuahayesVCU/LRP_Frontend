@@ -12,7 +12,7 @@ function Hero () {
         </div>
         <div className="subtext">
           <h3> 15 locations across both VCU campuses. </h3> 
-          <h3> Help youself to anything. </h3>
+          <h3> Help yourself to anything. </h3>
         </div>
       </Stack>
     </div>
