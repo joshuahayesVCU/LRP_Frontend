@@ -5,13 +5,14 @@ import Button from "react-bootstrap/Button";
 import './DashboardItem.css'
 
 // import pantry from "../../assets/cabellPantry.png";
-// import webcamMock from "../../assets/webcam-mock.png";
+import webcamMock from "../../assets/webcam-mock.png";
 
-type item = {
+type pantryJson = {
+  name: string;
+  facility: string;
   pantry_exterior_url: string;
   latest_contents_url: string;
   campus: string;
-  facility: string;
   floor: string;
   hours: string;
   directions: string;
@@ -20,10 +21,13 @@ type item = {
   public_key: string
 };
 
-const api = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/";
+// static link to the server
+// const api = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/api/";
+const api= "http://localhost/api/";
+// <Card.Img className="cardImage" src={api + "latest/" + pantryJson.latest_contents_url} alt="Image of food" />
 
 
-function DashboardItem({ item }: { item: item }) {
+function DashboardItem({ pantryJson }: { pantryJson: pantryJson}) {
   const [showImage, setShowImage] = useState(false);
   const [buttonText, setButtonText] = useState("See The Pantry")
 
@@ -32,26 +36,35 @@ function DashboardItem({ item }: { item: item }) {
     setButtonText(showImage ? "See The Pantry" : "See The Food");
   };
 
+  // not having contorol flow inside the jxs
+    // Use different state 
+  // setting list outside return might make more legible 
+
+  // info container and list could be their own container
+  // don't do until you need to reuse
+
+  // useEffet could be used here, possible hydration issues
+
   return (
       <Card>
         {showImage ? (
-            <Card.Img className="cardImage" src={api + "exteriors/" + item.pantry_exterior_url} alt={"An image of the LRP at " + item.facility} />
+            <Card.Img className="cardImage" src={api + "exteriors/" + pantryJson.pantry_exterior_url} alt={"An image of the LRP at " + pantryJson.facility} />
           ) : (
-            <Card.Img className="cardImage" src={api + "latest/" + item.latest_contents_url} alt="Image of food" />
+            <Card.Img className="cardImage" src={webcamMock} alt="Image of food" />
           )} 
         <Card.Body>
           <Card.Text className="info-container">
             {!showImage ? (
               <ul className="info-list">
-                <li id="campus"> {item.campus} </li>
-                <li id="facility"> {item.facility} </li>
-                <li id="floor"> {item.floor} floor </li>
+                <li id="campus"> {pantryJson.campus} </li>
+                <li id="facility"> {pantryJson.facility} </li>
+                <li id="floor"> {pantryJson.floor} floor </li>
               </ul>
               ) : (
               <ul className="info-list">
                 <li id="campus"> This pantry is located </li>
-                <li id="facility"> {item.directions} </li>
-                <li id="floor"> {"open: " + item.hours} </li>
+                <li id="facility"> {pantryJson.directions} </li>
+                <li id="floor"> {"open: " + pantryJson.hours} </li>
               </ul>
               )} 
           </Card.Text>

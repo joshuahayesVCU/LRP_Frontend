@@ -6,7 +6,9 @@ import DashboardItem from "./components/DashboardItem/DashboardItem"
 
 // import pantries from "./pantries.json";
 
-const baseUrl = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/";
+//const baseUrl = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/api/";
+const baseUrl = "http://localhost/api/";
+
 
 function App() {
   const [pantryJson, setPantryJson] = useState([]);
@@ -26,9 +28,9 @@ function App() {
   return (
     <>
       <div className="Dashboard-grid">
-        {pantryJson.map((item) => (
+        {pantryJson.map((pantryJson) => (
           <div className="DashboardItems">
-            <DashboardItem item={item} />
+            <DashboardItem pantryJson={pantryJson} />
           </div>
           ))}
       </div>

@@ -52,10 +52,12 @@
   color: #333333;
   border: black;
   width: 100%;
-
 }
 
 .btn-primary:hover {
-  background: #555555;
+  background: #555555 !important;
 }
 
+.btn-primary:active {
+  background: #555555 !important;
+}
