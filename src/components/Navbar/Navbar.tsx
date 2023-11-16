@@ -24,15 +24,6 @@ function NavbarScroll() {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="https://news.vcu.edu/article/2021/10/little-ram-pantries-will-provide-emergency-food-assistance-to-vcu-students">Learn More</Nav.Link>
-            <NavDropdown title="Filter" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Monroe Park Campus</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Medical College Campus</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Favorites</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-               Clear Filters 
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

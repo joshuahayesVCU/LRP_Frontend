@@ -30,12 +30,12 @@
   padding: 0; /* Remove padding */
 }
 
-#campus {
+#facility {
   font-size: 16px;
   font-weight: bold;
 }
 
-#facility, #floor {
+#campus, #floor {
   font-size: 19px;
 }
 
@@ -58,6 +58,6 @@
   background: #555555 !important;
 }
 
-.btn-primary:active {
-  background: #555555 !important;
+.btn-primary:focus {
+  background-color: #F8B300;
 }

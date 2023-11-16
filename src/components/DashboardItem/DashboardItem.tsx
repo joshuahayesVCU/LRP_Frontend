@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import './DashboardItem.css'
 
 // import pantry from "../../assets/cabellPantry.png";
-import webcamMock from "../../assets/webcam-mock.png";
+// import webcamMock from "../../assets/webcam-mock.png";
 
 type pantryJson = {
   name: string;
@@ -22,18 +22,17 @@ type pantryJson = {
 };
 
 // static link to the server
-// const api = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/api/";
-const api= "http://localhost/api/";
-// <Card.Img className="cardImage" src={api + "latest/" + pantryJson.latest_contents_url} alt="Image of food" />
+ const api = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8000/api/";
+//const api= "http://localhost/api/";
 
 
 function DashboardItem({ pantryJson }: { pantryJson: pantryJson}) {
   const [showImage, setShowImage] = useState(false);
-  const [buttonText, setButtonText] = useState("See The Pantry")
+  const [buttonText, setButtonText] = useState("See More Details")
 
   const handleButtonClick = () => {
     setShowImage(!showImage); // Toggles the state
-    setButtonText(showImage ? "See The Pantry" : "See The Food");
+    setButtonText(showImage ? "See More Details" : "See The Contents");
   };
 
   // not having contorol flow inside the jxs
@@ -50,21 +49,21 @@ function DashboardItem({ pantryJson }: { pantryJson: pantryJson}) {
         {showImage ? (
             <Card.Img className="cardImage" src={api + "exteriors/" + pantryJson.pantry_exterior_url} alt={"An image of the LRP at " + pantryJson.facility} />
           ) : (
-            <Card.Img className="cardImage" src={webcamMock} alt="Image of food" />
+            <Card.Img className="cardImage" src={api + "latest/" + pantryJson.latest_contents_url} alt="Image of food" />
           )} 
         <Card.Body>
           <Card.Text className="info-container">
             {!showImage ? (
               <ul className="info-list">
+                <li id="facility"> {pantryJson.facility.toUpperCase()} </li>
                 <li id="campus"> {pantryJson.campus} </li>
-                <li id="facility"> {pantryJson.facility} </li>
                 <li id="floor"> {pantryJson.floor} floor </li>
               </ul>
               ) : (
               <ul className="info-list">
-                <li id="campus"> This pantry is located </li>
-                <li id="facility"> {pantryJson.directions} </li>
-                <li id="floor"> {"open: " + pantryJson.hours} </li>
+                <li id="facility"> This pantry is located </li>
+                <li id="campus"> {pantryJson.directions} </li>
+                <li id="floor"> {"Open: " + pantryJson.hours} </li>
               </ul>
               )} 
           </Card.Text>

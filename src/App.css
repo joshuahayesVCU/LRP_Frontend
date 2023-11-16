@@ -20,7 +20,7 @@
     grid-template-columns: repeat(2, 1fr); /* 2 columns for screens between 400px and 768px */
     grid-auto-rows: auto;
     column-gap: 0.5rem;
-    row-gap: 2rem;
+    row-gap: 4rem;
   }
 }
 
@@ -30,8 +30,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
     grid-auto-rows: auto;
-    column-gap: 1.5rem;
-    row-gap: 2rem;
+    column-gap: 2.5rem;
+    row-gap: 4rem;
   }
 }
+
 

@@ -6,8 +6,8 @@ import DashboardItem from "./components/DashboardItem/DashboardItem"
 
 // import pantries from "./pantries.json";
 
-//const baseUrl = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8080/api/";
-const baseUrl = "http://localhost/api/";
+const baseUrl = "http://ec2-18-227-24-155.us-east-2.compute.amazonaws.com:8000/api/";
+//const baseUrl = "http://localhost/api/";
 
 
 function App() {

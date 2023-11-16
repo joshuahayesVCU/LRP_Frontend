@@ -12,27 +12,11 @@ export default function Footer () {
                 Little Ram Pantries
               </h6>
               <p>
-                The students of Multi-24-620 would like to thank you for visitng our capstone project! 
+                The students of Multi-24-620 would like to thank you for visiting our capstone project! 
               </p>
               <p>
-                We would also like to thank Dr. Daniel Cranston, Dr. Supriyo Bandyoopadhyay, Dr John Jones, 
+                We would also like to thank Dr. Daniel Cranston, Dr. Supriyo Bandyoopadhyay, Dr. John Jones, 
                 Lauren Linkous, and Lisa Matthews-Alisworth
-              </p>
-            </MDBCol>
-
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Something</h6>
-              <p className='text-reset'>
-                xxx
-              </p>
-              <p className='text-reset'>
-                xxx
-              </p>
-              <p className='text-reset'>
-                xxx
-              </p>
-              <p className='text-reset'>
-                xxx
               </p>
             </MDBCol>
 
@@ -51,11 +35,6 @@ export default function Footer () {
               <p>
                 <a href='#!' className='text-reset'>
                     See The Research
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                    Something Here
                 </a>
               </p>
             </MDBCol>
