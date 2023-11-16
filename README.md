@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
+# Little Ram Pantries Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository contains the source code and documentation for the development of a web application aimed at enhancing the effectiveness of the Little Ram Pantries (LRP) program on college campuses. The LRPs serve as distribution points for essential food items and personal hygiene products, catering to students facing food insecurity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Problem Statement
 
-## Expanding the ESLint configuration
+While the LRPs have made a significant impact, there are limitations to the current system:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Lack of Real-Time Visualization:** The existing LRPs lack the capability for real-time visualization of their stock, requiring students to be physically present to see what is inside.
 
-- Configure the top-level `parserOptions` property like this:
+2. **Limited Information Accessibility:** Information about the LRP program, including directions to individual pantries, is scattered, making it challenging for students to access relevant details.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Solution
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The students of MULTI 24-620 are developing a web application dashboard to address these issues. Key features of the solution include:
+
+- **Mobile-Focused Application:** Built using React, a widely used front-end library, the web app is designed to be user-friendly and accessible on the go, maximizing convenience for busy students.
+
+- **Real-Time Inventory Visualization:** The web app will display a photo of each pantry's current stock, addressing the lack of real-time information. This will be achieved through webcam integration with RaspberryPI and door sensors, ensuring the dashboard reflects the latest snapshot.
+
+## Impact
+
+The positive impact of the web app includes:
+
+- **Increased Access:** Streamlining pantry access will reach more students in need, alleviating food insecurity on campus.
+
+- **Nationwide Replication:** Upon successful implementation, the LRPs model will be shared with universities nationwide. Four universities, including Chatham University and The University of Alabama at Birmingham, have already expressed interest.
+
+- **Estimated Reach:** Extrapolating from current metrics, the project could potentially feed over 28,000 students across different universities.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
+
+---
+
+*Note: Detailed documentation, success stories from VCU's campus, and a robust product design are integral components of our strategy to combat hunger both within our community and nationwide.*
